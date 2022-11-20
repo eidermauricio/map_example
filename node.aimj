@@ -15,7 +15,7 @@
         },
         {
           Name: "writeText",
-          Value: "invocation from node server",
+          Value: "invocation from node server v1.0",
           ActionType: "SeClear",
           Timeout: 4,
           SeByLocator: "Name",
