@@ -1,0 +1,36 @@
+{
+  Name: "node",
+  RobotAuthor: "xxxx",
+  SeleniumBrowser: "Chrome",
+  Stages: [
+    {
+      Name: "GoogleHome",
+      Type: "Windows",
+      Image: "iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAXSURBVChTY1Da6POfGDyqEC+mtkKf/wAoFdO5S88JawAAAABJRU5ErkJggg==",
+      Steps: [
+        {
+          Name: "nav",
+          Value: "https://www.google.com",
+          ActionType: "SeNavigateToAndMaximize"
+        },
+        {
+          Name: "writeText",
+          Value: "invocation from node server",
+          ActionType: "SeClear",
+          Timeout: 4,
+          SeByLocator: "Name",
+          SeLocatorString: "q"
+        },
+        {
+          Name: "sleep1",
+          Value: "2000",
+          ActionType: "Sleep"
+        },
+        {
+          Name: "kill",
+          ActionType: "SeKillDriver"
+        }
+      ]
+    }
+  ]
+}
