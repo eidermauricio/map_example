@@ -1,0 +1,19 @@
+{
+  Name: "nodeNoBrowser",
+  RobotAuthor: "xxxx",
+  Stages: [
+    {
+      Name: "GoogleHome",
+      SourceCode: "\r\n//RunAt:Desktop\r\nbool IController.Execute()\r\n{  \r\n\r\n  Console.WriteLine(\"[INFO] Hi from console!!!...\");\r\n  k.Run(\"GoogleHome>sleep1\");\r\n  \r\n  return true;\r\n}",
+      Type: "Windows",
+      Image: "iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAXSURBVChTY1Da6POfGDyqEC+mtkKf/wAoFdO5S88JawAAAABJRU5ErkJggg==",
+      Steps: [
+        {
+          Name: "sleep1",
+          Value: "2000",
+          ActionType: "Sleep"
+        }
+      ]
+    }
+  ]
+}
