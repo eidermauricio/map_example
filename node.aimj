@@ -5,6 +5,7 @@
   Stages: [
     {
       Name: "GoogleHome",
+      SourceCode: "\r\n//RunAt:Desktop\r\nbool IController.Execute()\r\n{  \r\n  k.Run(\"GoogleHome>nav\");\r\n  k.Run(\"GoogleHome>writeText\");\r\n  k.Run(\"GoogleHome>sendQuery\");\r\n  k.Run(\"GoogleHome>sleep1\");\r\n  \r\n  string res = k.Run(\"GoogleHome>textOfFirstResult\");\r\n  Console.WriteLine(\"First result in chrome window is: \" + res);\r\n  \r\n  k.Run(\"GoogleHome>kill\");\r\n\r\n  return true;\r\n}",
       Type: "Windows",
       Image: "iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAXSURBVChTY1Da6POfGDyqEC+mtkKf/wAoFdO5S88JawAAAABJRU5ErkJggg==",
       Steps: [
@@ -15,8 +16,17 @@
         },
         {
           Name: "writeText",
-          Value: "invocation from node server v1.1",
+          Value: "invocation from node server",
           ActionType: "SeClear",
+          Timeout: 4,
+          SeByLocator: "Name",
+          SeLocatorString: "q"
+        },
+        {
+          Name: "sendQuery",
+          X: 10,
+          Y: 10,
+          ActionType: "SeSubmitElement",
           Timeout: 4,
           SeByLocator: "Name",
           SeLocatorString: "q"
@@ -25,6 +35,14 @@
           Name: "sleep1",
           Value: "2000",
           ActionType: "Sleep"
+        },
+        {
+          Name: "textOfFirstResult",
+          Value: "Node.js method invocation remotely - Stack Overflow",
+          ActionType: "SeExtractElementText",
+          SeByLocator: "Css",
+          SeLocatorString: "#res h3",
+          EvidenceOrder: "Before"
         },
         {
           Name: "kill",
