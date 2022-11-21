@@ -1,7 +1,7 @@
 {
   Name: "node",
   RobotAuthor: "xxxx",
-  SeleniumBrowser: "Chrome",
+  SeleniumBrowser: "Chrome (Headless)",
   Stages: [
     {
       Name: "GoogleHome",
